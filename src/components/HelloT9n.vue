@@ -2,6 +2,13 @@
     <div class="hello">
         <h1>{{t9n.get(msg)}}</h1>
         {{t9n.get('Current locale')}}: {{currentLocale}}
+        <div class="codingArea">
+            <label>userName:</label>
+            <input v-model="userName">
+            <label>photoCount:</label>
+            <input v-model="photoCount" type="number" min="0">
+        </div>
+        {{t9n.get('sharedPhotos', true, {userName, photoCount})}}
     </div>
 </template>
 
@@ -10,6 +17,10 @@ import T9n from '../t9n.js'
 
 export default {
     name: 'HelloT9n',
+    data: () => ({
+        userName: 'Anne',
+        photoCount: 3,
+    }),
     props: {
         msg: String
     },
@@ -38,5 +49,16 @@ li {
 }
 a {
     color: #42b983;
+}
+.codingArea {
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* justify-content: left; */
+    
+    /* height: 300px; */
+    margin: 1em 0;
+}
+label, input {
+    margin-right: 1em;
 }
 </style>
