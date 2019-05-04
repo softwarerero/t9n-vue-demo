@@ -1,4 +1,7 @@
 # t9n-vue-demo
+Example App to show the use of meteor-accounts-t9n togetther with plain JavaScript and Vue.js
+
+The app has been created with Vue CLI and then customized.
 
 ## Project setup
 ```
